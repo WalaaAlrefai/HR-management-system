@@ -1,5 +1,5 @@
 `use strict`
-
+const allEmployee=[]
 function Employee (employeeId,fullName,department,level,imageUrl,salary) {
     this.employeeId=employeeId;
     this.fullName=fullName;
@@ -7,6 +7,7 @@ function Employee (employeeId,fullName,department,level,imageUrl,salary) {
     this.level=level;
     this.imageUrl=imageUrl;
     this.salary=salary;
+    allEmployee.push(this)
 }
 
 let firstEmployee=new Employee(1000,"Ghazi Samer","Administration","Senior",);
@@ -22,7 +23,7 @@ Employee.prototype.calculateSalary= function (){
         return Math.floor(Math.random() * (2000 - 1500) ) + 1500;
     }else if(this.level=="Mid-Senior"){
         return Math.floor(Math.random() * (1500 - 1000) ) + 1000;
-    }else if (this.level=="junior"){
+    }else if (this.level=="Junior"){
         return Math.floor(Math.random() * (1000 - 500) ) + 500;
     }
 }
@@ -39,3 +40,7 @@ Employee.prototype.render=function(){
 console.log(firstEmployee.calculateSalary());
 console.log(firstEmployee.netSalary());
 firstEmployee.render();
+
+for (let i = 0; i < allEmployee.length; i++) {
+    allEmployee[i].render();
+}
