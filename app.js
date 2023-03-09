@@ -31,15 +31,12 @@ Employee.prototype.netSalary= function (){
   
    let tax =this.calculateSalary()*0.075;
    let netSal=this.calculateSalary()-tax;
+   this.salary=netSal;
    return netSal;
 }
 Employee.prototype.render=function(){
     document.write(`<h1>the employee name is ${this.fullName} and the salary is ${this.netSalary()}.</h1>`);
 }
-
-console.log(firstEmployee.calculateSalary());
-console.log(firstEmployee.netSalary());
-firstEmployee.render();
 
 for (let i = 0; i < allEmployee.length; i++) {
     allEmployee[i].render();
