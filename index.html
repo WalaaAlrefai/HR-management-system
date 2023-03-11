@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/8e4f71bf60.css" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://kit.fontawesome.com/8e4f71bf60.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://kit.fontawesome.com/8e4f71bf60.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="">Home </a></li>
                 <li><a href="accounting.html">accounting</a></li>
-                
+
             </ul>
 
         </nav>
     </header>
     <main>
+        <form id="form">
+            <label for="fname">Full Name</label><br>
+            <input id="fname"><br><br>
+            <label for="department">Department</label><br>
+            <select id="department" name="choice">
+                <option value="Administration" type="choice" >Administration</option>
+                <option value="Marketing" id="sec2">Marketing</option>
+                <option value="Development" id="sec3">Development</option>
+                <option value="Finance" id="sec4">Finance</option>
+            </select><br><br>
+            <label for="level">Level</label><br>
+            <select id="level" name="choose">
+                <option value="Junior" type="choice">Junior</option>
+                <option value="Mid-Senior">Mid-Senior</option>
+                <option value="Senior">Senior</option>
+            </select><br><br>
+            <label for="img">Image URL: </label><br>
+            <input type="text" id="img"><br><br>
+            <input type="submit" value="submit">
+        </form>
+        <br>
+        <section id="sec1">   
+        </section>
+        <section id="sec2">
+        </section>
+        <section id="sec3">
+        </section>
+        <section id="sec4">
+        </section>
+
         <script src="./app.js"></script>
+
+
     </main>
     <footer>
         <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
@@ -28,6 +63,7 @@
         <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
         <i class="fa-solid fa-copyright"> 0705 copyright </i>
     </footer>
-    
+
 </body>
+
 </html>
