@@ -48,7 +48,7 @@ Employee.prototype.render=function(){
     imgEmp.src=this.imageUrl;
     divEl.appendChild(imgEmp);
     let h4El=document.createElement("h4");
-    h4El.textContent=`Name: ${this.fullName} - ID: ${this.getEmpId()}`;
+    h4El.textContent=`Name: ${this.fullName} - ID: ${this.employeeId}`;
     divEl.appendChild(h4El);
     let h4El2=document.createElement("h4");
     h4El2.textContent=`Department: ${this.department} - Level: ${this.level}.`;
@@ -70,7 +70,7 @@ Employee.prototype.getEmpId=function(){
        
     this.employeeId=uniqueId();
     console.log(uniqueId());
-   
+    
 }
 
 
@@ -82,6 +82,7 @@ function submitHandler(event) {
     let levelVar=(event.target.level.value);
     let imgVar=(event.target.image.value);
     let showNewEmployee=new Employee(0,flName,dept,levelVar,imgVar);
+    showNewEmployee.getEmpId();
     showNewEmployee.render();
     console.log(showNewEmployee);
     
@@ -95,6 +96,7 @@ function allEmployeeCaller(){
         allEmployee[i].getEmpId();
         console.log(allEmployee[i]);
         allEmployee[i].render();
+        
        
     }
     
