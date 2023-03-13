@@ -1,5 +1,5 @@
 `use strict`
-const allEmployee=[]
+let allEmployee=[]
 let secEl=document.getElementById("sec1");
 let form=document.getElementById("form");
 
@@ -10,8 +10,12 @@ function Employee (employeeId,fullName,department,level,imageUrl,salary) {
     this.level=level;
     this.imageUrl=imageUrl;
     this.salary=0;
-    allEmployee.push(this)
+    allEmployee.push(this);
 }
+
+
+
+
 
 let firstEmployee=new Employee("1000","Ghazi Samer","Administration","Senior","assets/Ghazi.jpg");
 let secondEmployee=new Employee("1001","Lana Ali","Finance","Senior","assets/Lana.jpg");
@@ -32,16 +36,13 @@ Employee.prototype.calculateSalary= function (){
 }
 
 Employee.prototype.netSalary= function (){
-  console.log(this.calculateSalary());
    let tax =this.calculateSalary()*0.075;
    let netSal=this.calculateSalary()-tax;
-   console.log(netSal);
    this.salary=netSal;
 }
 
 Employee.prototype.render=function(){
     this.netSalary();
-    console.log('hi');
     let divEl=document.createElement("div");
     secEl.appendChild(divEl);
     let imgEmp=document.createElement("img");
@@ -69,7 +70,6 @@ function uniqueId(){
 Employee.prototype.getEmpId=function(){
        
     this.employeeId=uniqueId();
-    console.log(uniqueId());
     
 }
 
@@ -85,21 +85,42 @@ function submitHandler(event) {
     showNewEmployee.getEmpId();
     showNewEmployee.render();
     console.log(showNewEmployee);
-    
-    
+    saveData(allEmployee);
+       
 }
 function allEmployeeCaller(){
 
-
-    
     for(let i=0 ;i<allEmployee.length;i++){
         allEmployee[i].getEmpId();
-        console.log(allEmployee[i]);
-        allEmployee[i].render();
-        
-       
+        allEmployee[i].render();   
     }
     
 }
+
+
+
+function saveData(data){
+    let stringArr=JSON.stringify(data);
+    localStorage.setItem('Employee',stringArr);
+    
+}
+
+console.log("before saving in LS",allEmployee);
+
+
+function getData(){
+    let retriveArr=localStorage.getItem('Employee');
+    let objArr=JSON.parse(retriveArr);
+    console.log("after gitting from LS",objArr);
+    if( objArr !==null ){
+        allEmployee=[];
+        for(let i=0;i<objArr.length;i++){
+            new Employee(objArr[i].employeeId ,objArr[i].fullName,
+             objArr[i].department ,objArr[i].level, objArr[i].imageUrl ,objArr[i].salary)
+         }
+    }
+    
+}
+getData();  
 allEmployeeCaller(allEmployee);
 

@@ -114,3 +114,29 @@ footer{
 i{
     color:antiquewhite;
 }
+#sec3{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
+}
+#table {
+    display: flex;
+    width: 70%;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+    
+/* }
+#tab1 tr {
+    gap :50px;
+}
+
+#tab1 tr th{
+    gap:20px;
+
+} */
