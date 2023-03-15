@@ -18,8 +18,8 @@ nav ul li{
     display: flex;
     width:0%;
     text-decoration: none;
-    padding-left: 100%;
-    justify-content: space-between;
+    margin-left: 100%;
+    justify-content: space-between; 
    
 }
 
@@ -121,22 +121,19 @@ i{
     align-items: center;
 
 }
-#table {
-    display: flex;
-    width: 70%;
-    border: 2px solid black;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  
+table{
+    border: 2px solid green;
 }
+    th{
+        border: 2px solid green;
+        padding: 20px;
+        background-color: rgb(246, 179, 45);
+    }
 
-    
-/* }
-#tab1 tr {
-    gap :50px;
+td {
+    border: 2px solid green;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(115, 142, 58);
 }
-
-#tab1 tr th{
-    gap:20px;
-
-} */
